@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react'
 
-const FormSection = () => {
+const PersonalForm = () => {
   const [step, setStep] = useState(1)
   const [formData, setFormData] = useState({})
 
@@ -81,12 +81,22 @@ const FormSection = () => {
             <label htmlFor="paymentDuration" className="block text-gray-800 mb-1">Howmany months do you want to pay?</label>
             <input type="number" id="paymentDuration" name="paymentDuration" className="w-full p-2 border border-gray-300 rounded" onChange={handleInputChange} />
           </div>
-          <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200">Finish</button>
+          <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200" onClick={handleSubmit}>Finish</button>
           <button type="button" className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition duration-200" onClick={handlePreviousStep}>Previous Step</button>
         </form>
+      </div>
+    )
+  } else if (step === 4) {
+    return (
+      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center">
+        <div className="flex items=center flex-col justify-center bg-white p-8 rounded-lg shadow-md">
+          <h2 className="text-4xl font-bold mb-4 text-center">Success</h2>
+          <p className="text-gray-800 mb-8 text-center">Based on your request, we have a special offer for you!</p>
+          <button type="button" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200">Show Me</button>
+        </div>
       </div>
     )
   }
 }
 
-export default FormSection
+export default PersonalForm
