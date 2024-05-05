@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -12,9 +13,11 @@ const HeroSection = () => {
         <p className="text-xl md:text-2xl text-gray-600 mb-8">
           We offer a wide range of vehicles to suit your needs. Rent a car from us and enjoy your journey with peace of mind.
         </p>
+        <Link href="/personal-form">
         <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200">
           Book Now
         </button>
+        </Link>
       </div>
       <div>
         <img src="/imgs/hero-car.png" alt="Car" className="object-contain w-full h-full" />
