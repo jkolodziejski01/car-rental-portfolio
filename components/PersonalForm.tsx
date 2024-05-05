@@ -57,7 +57,7 @@ const PersonalForm = () => {
     if (!formData.email) {
       newErrors.email = 'Email is required'
       isValid = false
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(formData.email)) {
+    } else if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i.test(formData.email)) {
       newErrors.email = 'Email is invalid'
       isValid = false
     } else {
@@ -67,7 +67,11 @@ const PersonalForm = () => {
     if (!formData.phone) {
       newErrors.phone = 'Phone number is required'
       isValid = false
-    }  else {
+    } else if (!/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/i.test(formData.phone)) {
+      newErrors.phone = 'Phone number is invalid'
+      isValid = false
+    }  
+    else {
       newErrors.phone = ''
     }
 
