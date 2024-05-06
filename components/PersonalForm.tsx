@@ -1,5 +1,6 @@
 "use client";
 import React, { FormEvent, useState } from 'react'
+import { FormDataProvider } from './FormDataContext';
 
 interface FormState {
   name: string
@@ -167,6 +168,7 @@ const PersonalForm = () => {
 
   if (step === 1) {
     return (
+      <FormDataProvider value={formData}>
       <div className="bg-gray-200 p-12">
         <h2 className="text-2xl font-bold mb-4">Step 1: Personal Information</h2>
         <form onSubmit={handleSubmit}>
@@ -193,6 +195,7 @@ const PersonalForm = () => {
           <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200">Next Step</button>
         </form>
       </div>
+      </FormDataProvider>
     )
   } else if (step === 2) {
     return (
