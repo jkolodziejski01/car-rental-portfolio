@@ -172,19 +172,23 @@ const PersonalForm = () => {
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-gray-800 mb-1">Name</label>
-            <input type="text" id="name" name="name" className="w-full p-2 border border-gray-300 rounded" placeholder='Joe' onChange={handleInputChange} />
+            <input type="text" id="name" name="name" className="w-full p-2 border border-gray-300 rounded" placeholder='Joe' onChange={handleInputChange} value={formData.name} />
+            {errors.name && <p className="text-red-500 mb-2text-sm">{errors.name}</p>}
           </div>
           <div className="mb-4">
             <label htmlFor="surname" className="block text-gray-800 mb-1">Surname</label>
-            <input type="text" id="surname" name="surname" className="w-full p-2 border border-gray-300 rounded" placeholder='Doe' onChange={handleInputChange} />
+            <input type="text" id="surname" name="surname" className="w-full p-2 border border-gray-300 rounded" placeholder='Doe' onChange={handleInputChange} value={formData.surname} />
+            {errors.surname && <p className="text-red-500 mb-2text-sm">{errors.surname}</p>}
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-800 mb-1">Email Address</label>
-            <input type="email" id="email" name="email" className="w-full p-2 border border-gray-300 rounded" placeholder='example@email.com' onChange={handleInputChange} />
+            <input type="text" id="email" name="email" className="w-full p-2 border border-gray-300 rounded" placeholder='example@email.com' onChange={handleInputChange} value={formData.email} />
+            {errors.email && <p className="text-red-500 mb-2text-sm">{errors.email}</p>}
           </div>
           <div className="mb-4">
             <label htmlFor="phone" className="block text-gray-800 mb-1">Phone Number</label>
-            <input type="tel" id="phone" name="phone" className="w-full p-2 border border-gray-300 rounded" placeholder='+00 123456789' onChange={handleInputChange} />
+            <input type="tel" id="phone" name="phone" className="w-full p-2 border border-gray-300 rounded" placeholder='+00 123456789' onChange={handleInputChange} value={formData.phone} />
+            {errors.phone && <p className="text-red-500 mb-2text-sm">{errors.phone}</p>}
           </div>
           <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200">Next Step</button>
         </form>
@@ -197,15 +201,18 @@ const PersonalForm = () => {
         <form onSubmit={handleSubmit2}>
           <div className="mb-4">
             <label htmlFor="salary" className="block text-gray-800 mb-1">Salary $</label>
-            <input type="number" id="salary" name="salary" className="w-full p-2 border border-gray-300 rounded" placeholder='Please type in your monthly salary' onChange={handleInputChange} />
+            <input type="number" id="salary" name="salary" className="w-full p-2 border border-gray-300 rounded" placeholder='Please type in your monthly salary' onChange={handleInputChange} value={formData.salary} />
+            {errors.salary && <p className="text-red-500 mb-2text-sm">{errors.salary}</p>}
           </div>
           <div className="mb-4">
             <label htmlFor="monthlyExpenses" className="block text-gray-800 mb-1">Monthly Expenses $</label>
-            <input type="number" id="monthlyExpenses" name="monthlyExpenses" className="w-full p-2 border border-gray-300 rounded" placeholder='Please type in your monthly expenses' onChange={handleInputChange} />
+            <input type="number" id="monthlyExpenses" name="monthlyExpenses" className="w-full p-2 border border-gray-300 rounded" placeholder='Please type in your monthly expenses' onChange={handleInputChange} value={formData.monthlyExpenses} />
+            {errors.monthlyExpenses && <p className="text-red-500 mb-2text-sm">{errors.monthlyExpenses}</p>}
           </div>
           <div className="mb-4">
             <label htmlFor="timeInCurrentJob" className="block text-gray-800 mb-1">How many months have you been in your current job?</label>
-            <input type="number" id="timeInCurrentJob" name="timeInCurrentJob" className="w-full p-2 border border-gray-300 rounded" onChange={handleInputChange} />
+            <input type="number" id="timeInCurrentJob" name="timeInCurrentJob" className="w-full p-2 border border-gray-300 rounded" onChange={handleInputChange} value={formData.timeInCurrentJob}/>
+            {errors.timeInCurrentJob && <p className="text-red-500 mb-2text-sm">{errors.timeInCurrentJob}</p>}
           </div>
           <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200">Next Step</button>
           <button type="button" className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition duration-200" onClick={handlePreviousStep}>Previous Step</button>
@@ -219,7 +226,8 @@ const PersonalForm = () => {
         <form onSubmit={handleSubmit3}>
           <div className="mb-4">
             <label htmlFor="paymentDuration" className="block text-gray-800 mb-1">Howmany months do you want to pay?</label>
-            <input type="number" id="paymentDuration" name="paymentDuration" className="w-full p-2 border border-gray-300 rounded" onChange={handleInputChange} />
+            <input type="number" id="paymentDuration" name="paymentDuration" className="w-full p-2 border border-gray-300 rounded" onChange={handleInputChange} value={formData.paymentDuration} />
+            {errors.paymentDuration && <p className="text-red-500 mb-2text-sm">{errors.paymentDuration}</p>}
           </div>
           <button type="submit" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200" onClick={handleNextStep}>Finish</button>
           <button type="button" className="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition duration-200" onClick={handlePreviousStep}>Previous Step</button>
