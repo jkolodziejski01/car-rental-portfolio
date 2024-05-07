@@ -1,5 +1,6 @@
 "use client";
-import React, { FormEvent, useState } from 'react'
+import Link from 'next/link';
+import React, { FormEvent, useState, useEffect } from 'react'
 
 interface FormState {
   name: string
@@ -162,6 +163,10 @@ const PersonalForm = () => {
     })
   }
 
+  useEffect(() => {
+    window.localStorage.setItem('formData', JSON.stringify(formData))
+  }, [formData])
+
   console.log(formData)
   console.log(errors)
 
@@ -240,7 +245,9 @@ const PersonalForm = () => {
         <div className="flex items=center flex-col justify-center bg-white p-8 rounded-lg shadow-md">
           <h2 className="text-4xl font-bold mb-4 text-center">Success</h2>
           <p className="text-gray-800 mb-8 text-center">Based on your request, we have a special offer for you!</p>
+          <Link href="/offer">
           <button type="button" className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition duration-200">Show Me</button>
+          </Link>
         </div>
       </div>
     )
