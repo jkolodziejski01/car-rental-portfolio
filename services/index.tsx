@@ -11,6 +11,7 @@ export const getCarsList = async () => {
           mark
           model
           price
+          desc
           publishedAt
           updatedAt
         }

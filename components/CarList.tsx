@@ -5,7 +5,7 @@ import { getCarsList } from '@/services';
 
 
 const CarList = () => {
-    const [carList, setCarList] = useState([])
+    const [carList, setCarList] = useState<any>([])
 
 
 
@@ -21,7 +21,17 @@ const CarList = () => {
 
   return (
     <div>
-        <CarCard url='as' desc='s'></CarCard>
+        {carList.map((car, index) => (
+            <CarCard 
+            key={index} 
+            url={car.imgurl} 
+            mark={car.mark} 
+            model={car.mark} 
+            manifacturedate={car.manifacturedate} 
+            desc={car.desc} 
+            price={car.price}>
+            </CarCard>
+        ))}
     </div>
   )
 }
