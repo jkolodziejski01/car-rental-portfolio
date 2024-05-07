@@ -6,8 +6,7 @@ import { getCarsList } from '@/services';
 
 const CarList = () => {
     const [carList, setCarList] = useState<any>([])
-
-
+    const [formData, setFormData] =useState([])
 
     useEffect(() => {
         getCarsList_();
@@ -17,7 +16,13 @@ const CarList = () => {
         setCarList(result?.carLists)
     }
 
-    console.log(carList)
+    useEffect(() => {
+        const data = window.localStorage.getItem('FORM_DATA');
+        if ( data !== null ) setFormData(JSON.parse(data));
+      }, [])
+    
+    console.log(formData)
+
 
   return (
     <div>

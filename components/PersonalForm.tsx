@@ -164,7 +164,7 @@ const PersonalForm = () => {
   }
 
   useEffect(() => {
-    window.localStorage.setItem('formData', JSON.stringify(formData))
+    window.localStorage.setItem('FORM_DATA', JSON.stringify(formData))
   }, [formData])
 
   console.log(formData)
