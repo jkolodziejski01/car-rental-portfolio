@@ -12,6 +12,7 @@ export const getCarsList = async () => {
           model
           price
           desc
+          detaileddesc
           publishedAt
           updatedAt
         }
