@@ -83,6 +83,14 @@ const CarList = () => {
         {checked? (
     <div>
       {carList.map((car, index) => (
+        <Link 
+        href={{
+            pathname: `/${car.id}`,
+            query: {car: JSON.stringify(car)}
+        }}
+        key={index}
+        >
+        
         <CarCard
           key={index}
           url={car.imgurl}
@@ -93,6 +101,8 @@ const CarList = () => {
           price={car.price}
           monthlyPrice={Math.round(car.price / paymentDuration) }
         />
+        
+        </Link>
       ))}
     </div>
   ) : (
