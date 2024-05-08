@@ -7,9 +7,10 @@ interface CarCardProps {
   model: string
   manifacturedate: number
   price: number
+  monthlyPrice : number
 }
 
-const CarCard: React.FC<CarCardProps> = ({ url, desc, mark, model, manifacturedate, price }) => {
+const CarCard: React.FC<CarCardProps> = ({ url, desc, mark, model, manifacturedate, price, monthlyPrice }) => {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md mb-4">
       <img src={url} alt="Car" className="w-full h-96 object-contain mb-4" />
@@ -22,7 +23,8 @@ const CarCard: React.FC<CarCardProps> = ({ url, desc, mark, model, manifactureda
       <div className="bg-black w-full h-0.5 rounded-lg mb-2"></div>
       <p className="text-lg mb-2">{desc}</p>
       <div className="bg-black w-full h-0.5 rounded-lg mb-2"></div>
-      <p className="text=lg font-bold mb-2">{price} EUR</p>
+      <p className="text=lg font-bold mb-2">Total: {price} EUR</p>
+      <p className="text=lg font-bold mb-2">Per Month: {monthlyPrice} EUR</p>
       <button className="bg-blue-500 text-white px-6 py-3 rounded-lg w-full text-center hover:bg-blue-600 transition duration-200">View Details</button>
     </div>
   )
